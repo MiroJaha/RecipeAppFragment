@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/showAllRecipes">
+
+    <fragment
+        android:id="@+id/showAllRecipes"
+        android:name="com.example.recipeappfragment.ShowAllRecipes"
+        android:label="fragment_show_all_recipes"
+        tools:layout="@layout/fragment_show_all_recipes" >
+        <action
+            android:id="@+id/action_showAllRecipes_to_addNewRecipe"
+            app:destination="@id/addNewRecipe" />
+        <action
+            android:id="@+id/action_showAllRecipes_to_editRecipe"
+            app:destination="@id/editRecipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewRecipe"
+        android:name="com.example.recipeappfragment.AddNewRecipe"
+        android:label="fragment_add_new_recipe"
+        tools:layout="@layout/fragment_add_new_recipe" >
+        <action
+            android:id="@+id/action_addNewRecipe_to_showAllRecipes"
+            app:destination="@id/showAllRecipes" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRecipe"
+        android:name="com.example.recipeappfragment.EditRecipe"
+        android:label="fragment_edit_recipe"
+        tools:layout="@layout/fragment_edit_recipe" >
+        <action
+            android:id="@+id/action_editRecipe_to_showAllRecipes"
+            app:destination="@id/showAllRecipes" />
+    </fragment>
+</navigation>
